@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		094A1ECD90ECD007825D95B3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E625C1ABDB2D39CB77BF29 /* Security.framework */; };
 		1524BBF419A24C289873FCE0 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1A066F7EDD869BC014BB9C /* Metal.framework */; };
+		1CE3E74550C9738D9DAD258F /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD9054BB2089B53D535836 /* libapp.a */; };
 		5DCFDCE0989E0655641185BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA38F7BF7C28E04DBA849965 /* LaunchScreen.storyboard */; };
 		5DDC8F8949AE56AB4B683F62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5384EE0C649F19A31B462538 /* QuartzCore.framework */; };
 		6495EEEF2DFC12CB82351B2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42C09CE350D0304EDF85C59 /* UIKit.framework */; };
@@ -27,6 +28,7 @@
 		46600E42EDBD4E2F9CFFB94E /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		5384EE0C649F19A31B462538 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6B62CCFCDED0CBE851A51E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6CBD9054BB2089B53D535836 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		75C0A66A4769E0B428DFFE16 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		7A62F8DA3ACF6DA66CB9785D /* tauri-app_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "tauri-app_iOS.entitlements"; sourceTree = "<group>"; };
 		84E625C1ABDB2D39CB77BF29 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -64,6 +66,7 @@
 		2ECFA35AFF2D5945783C3B8D /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				D870E43F066FDB05A4503B8C /* arm64-sim */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -84,6 +87,14 @@
 			);
 			name = src;
 			path = ../../src;
+			sourceTree = "<group>";
+		};
+		53F617EAE1E8FF6A4223B902 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				6CBD9054BB2089B53D535836 /* libapp.a */,
+			);
+			path = debug;
 			sourceTree = "<group>";
 		};
 		5FCA5E244F4BE4C93672F978 /* bindings */ = {
@@ -135,6 +146,14 @@
 			path = "tauri-app_iOS";
 			sourceTree = "<group>";
 		};
+		D870E43F066FDB05A4503B8C /* arm64-sim */ = {
+			isa = PBXGroup;
+			children = (
+				53F617EAE1E8FF6A4223B902 /* debug */,
+			);
+			path = "arm64-sim";
+			sourceTree = "<group>";
+		};
 		E8C7C60131D2B902F3255A8F = {
 			isa = PBXGroup;
 			children = (
@@ -150,25 +169,18 @@
 			);
 			sourceTree = "<group>";
 		};
-		"TEMP_320E6F55-6CE9-43A6-B49A-D8F39969210A" /* x86_64 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = x86_64;
-			sourceTree = "<group>";
-		};
-		"TEMP_B3B56EA0-9004-4EB4-8E7D-57565253AEC9" /* arm64-sim */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "arm64-sim";
-			sourceTree = "<group>";
-		};
-		"TEMP_C12B163C-9BB7-446F-9A8A-F98AA8771A38" /* arm64 */ = {
+		"TEMP_5BB41C72-4175-4A41-B7F3-683E35FCC59D" /* arm64 */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = arm64;
+			sourceTree = "<group>";
+		};
+		"TEMP_C761004F-4601-4616-AEC4-96165E2ABFE0" /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = x86_64;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +240,7 @@
 				8A272DD02B0D36ACBCE73E26 /* Assets.xcassets in Resources */,
 				5DCFDCE0989E0655641185BE /* LaunchScreen.storyboard in Resources */,
 				74C25A7912AFE30DBE96B590 /* assets in Resources */,
+				1CE3E74550C9738D9DAD258F /* libapp.a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +315,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64  arm64-sim";
-				CODE_SIGN_STYLE = Automatic;
 			};
 			name = debug;
 		};
@@ -457,7 +469,6 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64  arm64-sim";
-				CODE_SIGN_STYLE = Automatic;
 			};
 			name = release;
 		};

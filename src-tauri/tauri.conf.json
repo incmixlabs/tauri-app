@@ -5,8 +5,8 @@
   "identifier": "com.tauri-app.app",
   "build": {
     "beforeDevCommand": "bun run dev",
-    "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "bun run build",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "pnpm run build",
     "frontendDist": "../dist"
   },
   "app": {
